@@ -2,7 +2,7 @@ header {
     background: linear-gradient(256deg, #98b1ec, #81a5f5);
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
-    height: 215px;
+    height: 105px;
     width: 100%;
 
     .container {
@@ -12,19 +12,19 @@ header {
 
         &::before {
             content: '';
-            height: 50px;
-            width: 50px;
+            height: 25px;
+            width: 25px;
         }
     }
 
     .title {
-        font-size: 4em;
+        font-size: 26px;
         color: #fff;
     }
 
     .add-profile {
-        height: 50px;
-        width: 50px;
+        height: 25px;
+        width: 25px;
         
         svg { margin-top: -65%; }
     }
