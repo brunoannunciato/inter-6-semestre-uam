@@ -1,0 +1,31 @@
+header {
+    background: linear-gradient(256deg, #98b1ec, #81a5f5);
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    height: 215px;
+    width: 100%;
+
+    .container {
+        align-items: center;
+        height: 100%;
+        justify-content: space-between;
+
+        &::before {
+            content: '';
+            height: 50px;
+            width: 50px;
+        }
+    }
+
+    .title {
+        font-size: 4em;
+        color: #fff;
+    }
+
+    .add-profile {
+        height: 50px;
+        width: 50px;
+        
+        svg { margin-top: -65%; }
+    }
+}
