@@ -1,38 +1,63 @@
-'use strict';
+const gulp 			= require('gulp'),
+	$ 				= require('gulp-load-plugins')(),
+	pkg 			= require('./package.json'),
+	banner 			= require('gulp-banner'),
+	cssnano 		= require('cssnano'),
+	cssMqpacker 	= require('css-mqpacker'),
+	autoprefixer 	= require('autoprefixer'),
+	named 			= require('vinyl-named'),
+	connect 		= require('gulp-connect-php'),
+	browserSync 	= require('browser-sync'),
+	webpack 		= require('webpack-stream');
 
-var gulp		 = require('gulp'),
-	$			 = require('gulp-load-plugins')(),
-	del			 = require('del'),
-	autoprefixer = require('autoprefixer'),
-	mqpacker	 = require('css-mqpacker'),
-	browserSync  = require('browser-sync'),
-	named		 = require('vinyl-named'),
-	webpack 	 = require('webpack-stream'),
-	pkg			 = require('./package.json');
-
-var paths = {
-	webpack : 'src/scripts/*.js',
-	scripts: ['src/scripts/**/*.js', '!src/scripts/vendor/**/*.js'],
-	styles  : ['src/styles/**/*.scss'],
-	images  : 'src/images/**/*.{png,jpeg,jpg,gif,svg}',
-	extras  : ['src/*.*', 'src/fonts/**/*', 'src/videos/**/*'],
-	dest    : {
-		scripts : 'dist/js',
-		styles  : 'dist/css',
-		images  : 'dist/img',
-		extras  : 'dist',
-		build: [ 'dist/**', '!dist/**/*.map' ]
-	}
+const paths = {
+	js: 'src/scripts/**/*.js',
+	scss: 'src/styles/**/*.scss',
+	css: 'src/css/*.css',
+	php: './*.php',
+	webpack: 'src/scripts/*.js'
 };
 
-gulp.task('lint', function () {
-	return gulp.src(paths.scripts)
-		.pipe($.jshint())
-		.pipe($.jshint.reporter('jshint-stylish'));
+// Default comment
+const comment = '/*\n' +
+	' * Theme Name: <%= pkg.name %>\n' +
+	' * Author: <%= pkg.author %>\n' +
+	' * Author URI: <%= pkg.homepage %>\n' +
+	' * Description: <%= pkg.description %>\n' +
+	' * Version: <%= pkg.version %>\n' +
+	'*/\n\n';
+
+gulp.task('styles', () => {
+	return gulp.src(paths.scss)
+		.pipe($.plumber())
+		.pipe($.sass({
+			errLogToConsole: true,
+			outputStyle: 'compressed',
+			includePaths: ['src/styles']
+		}).on('error', $.sass.logError))
+		.pipe($.postcss([
+			cssMqpacker({
+				sort: true
+			}),
+			cssnano({
+				autoprefixer: false,
+				reduceIdents: false
+			})
+		]))
+		.pipe($.postcss([
+			autoprefixer()
+		]))
+		.pipe(banner(comment, {
+			pkg: pkg
+		}))
+		.pipe($.sourcemaps.write('.'))
+		.pipe(gulp.dest('./src/css'))
+		.pipe($.rename(file => file.basename = file.basename.replace('.min', '')))
+		.pipe(gulp.dest('./src/css'))
+		.pipe(browserSync.stream());
 });
 
-gulp.task('scripts', ['lint'], function () {
-
+gulp.task('scripts', () => {
 	return gulp.src(paths.webpack)
 		.pipe($.plumber())
 		.pipe(named())
@@ -40,103 +65,60 @@ gulp.task('scripts', ['lint'], function () {
 			output: {
 				filename: '[name].min.js'
 			},
-			externals: {
-				'jquery': 'jQuery'
-			},
+
 			resolve: {
-				modules: [ 'src/scripts', 'node_modules']
+				modules: ['src/scripts', 'node_modules']
 			},
+
+			module: {
+				loaders: [
+					{
+						test: /\.js$/,
+						use: 'babel-loader',
+						exclude: /node_modules/
+					}
+				]
+			},
+
 			plugins: [
-				$.util.env.production ? new webpack.webpack.optimize.UglifyJsPlugin({
+				new webpack.webpack.DefinePlugin({
+					VERSION: JSON.stringify(pkg.version)
+				}),
+
+				new webpack.webpack.BannerPlugin('Build Version: ' + pkg.version),
+
+				new webpack.webpack.optimize.UglifyJsPlugin({
 					minimize: true,
 					compress: {
 						warnings: false
 					}
-				}) : $.util.noop,
-			],
-			devtool: $.util.env.production ? '': '#source-map'
-		}))
-		.pipe(gulp.dest(paths.dest.scripts));
-});
-
-gulp.task('styles', function () {
-	return gulp.src(paths.styles)
-		.pipe($.plumber())
-		.pipe($.util.env.production ? $.util.noop() : $.sourcemaps.init() )
-		.pipe($.sass({
-			outputStyle: $.util.env.production ? 'compressed' : 'nested',
-			includePaths: [
-				'src/styles'
+				})
 			]
-		}).on('error', $.sass.logError))
-		.pipe($.postcss([ autoprefixer(), mqpacker({sort: true}) ]))
-		.pipe($.sourcemaps.write('.'))
-		.pipe(gulp.dest(paths.dest.styles));
-});
-
-gulp.task('images', function () {
-	return gulp.src(paths.images)
-		.pipe($.plumber())
-		.pipe($.newer(paths.dest.images))
-		.pipe($.imagemin({
-			optimizationLevel: $.util.env.production ? 5 : 1,
-			progressive: true,
-			interlaced: true
 		}))
-		.pipe(gulp.dest(paths.dest.images));
+		.pipe(gulp.dest('./src/js/'))
+		.pipe(browserSync.stream());
 });
 
-gulp.task('extras', function () {
-	return gulp.src(paths.extras, {base: 'src'})
-		.pipe($.newer(paths.dest.extras))
-		.pipe(gulp.dest(paths.dest.extras));
-});
+// Connect and start a local php server using gulp-connect-php
+gulp.task('connect-sync', () => {
+	connect.server({
+		base: './src'
+	}, () => {
+		browserSync({
+			proxy: '127.0.0.1:8000'
+		});
+	});
 
-gulp.task('clean', function () {
-	return del([paths.dest.extras]);
-});
-
-gulp.task('serve', ['watch'], function () {
-	browserSync({
-		files: [ 'dist/**', '!dist/**/*.map' ],
-		server: {
-			baseDir: ['dist']
-		},
-		open: !$.util.env.no
+	gulp.watch(paths.php).on('change', () => {
+		browserSync.reload();
 	});
 });
 
-gulp.task('watch', ['scripts', 'styles', 'images', 'extras'], function(){
-	gulp.watch(paths.scripts, ['scripts']);
-	gulp.watch(paths.styles, ['styles']);
-	gulp.watch(paths.images, ['images']);
-	gulp.watch(paths.extras, ['extras']);
-});
+// Default task
+gulp.task('default', ['styles', 'scripts', 'connect-sync', 'watch']);
 
-gulp.task('default', ['clean'], function () {
-	gulp.start('serve');
-});
-
-gulp.task('bump', function(){
-	return gulp.src('./package.json')
-		.pipe($.bump())
-		.pipe(gulp.dest('.'));
-});
-
-gulp.task('zip', function(){
-	var pkg = JSON.parse(require('fs').readFileSync('package.json'));
-
-	return gulp
-		.src(paths.dest.build)
-		.pipe($.zip('build-v' + pkg.version + '-' + pkg.name + '.zip'))
-		.pipe(gulp.dest('build'));
-});
-
-gulp.task('build', ['images', 'styles', 'scripts', 'extras', 'bump'], function(){
-	gulp.start(['zip']);
-});
-
-gulp.task('deploy', ['clean'], function(){
-	$.util.env.production = true;
-	gulp.start('build');
+// Watch task - Use to watch change in your files and execute other tasks
+gulp.task('watch', ['styles', 'scripts'], () => {
+	gulp.watch([paths.js], ['scripts']);
+	gulp.watch([paths.scss], ['styles']);
 });

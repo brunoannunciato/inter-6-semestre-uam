@@ -120,7 +120,7 @@ main.home {
         input.name {
             width: 80%;
             border: none;
-            border-bottom: 1px solid #000;
+            border-bottom: 1px solid #707070;
             color: #777;
             font-size: 18px;
             padding: 10px;
@@ -128,7 +128,7 @@ main.home {
         }
 
         .button {
-            display: none;
+            text-align: center;
         }
     }
 }

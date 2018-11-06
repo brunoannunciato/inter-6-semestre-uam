@@ -5,12 +5,15 @@
     <body>
         <header>
             <div class="container">
+                <img src="images/arrow-left.png" alt="" class="back-button">
+
                 <h1 class="title">LOGO</h1>
+
                 <div class="add-profile">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25">
                         <defs>
                             <style>
-                                .cls-1,.cls-2,.cls-4{fill:none}.cls-1,.cls-2{stroke:#fff;stroke-width:2px}.cls-2{stroke-linecap:round}.cls-3{stroke:none}
+                                .cls-1,.cls-2,.cls-4{fill:none}.cls-1,.cls-2{stroke:#fff !important;stroke-width:2px}.cls-2{stroke-linecap:round}.cls-3{stroke:none}
                             </style>
                         </defs>
                         <g id="Group_6" data-name="Group 6" transform="translate(-333 -7)">

@@ -1,0 +1,23 @@
+section.panel {
+    .text { text-align: center; }
+
+    .board {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+
+        .led {
+            width: calc(14.28% - 2px);
+            height: 50px;
+            border: 1px solid #777777;
+        }
+    }
+
+    .button {
+        text-align: center;
+        margin: 15px auto;
+        width: 80%;
+    }
+}
+
+// section.result {}

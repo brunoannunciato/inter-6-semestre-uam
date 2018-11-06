@@ -2,14 +2,14 @@
 
 <main class="home">
     <div class="container">
-        <section class="no-profiles" style="display: none;">
-            <img src="img/home-estrela.png" alt="Icone de estrela triste" class="img">
+        <section class="no-profiles hide">
+            <img src="images/home-estrela.png" alt="Icone de estrela triste" class="img">
         
             <p class="text">
                 Ops! parece que você não possui nenhum perfil cadastrado!
             </p>
     
-            <div class="button">
+            <div class="button create-profile-cta">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
                 <defs>
                     <style>
@@ -26,7 +26,7 @@
             </div>
         </section>
 
-        <section class="profiles-shelf" style="display: none;">
+        <section class="profiles-shelf">
             <div class="container">
                 <div>
                     <p class="text">
@@ -69,7 +69,7 @@
                 <input type="text" class="name" id="input-name">
             </div>
 
-            <div class="button active create">Criar perfil</div>
+            <div class="button create">Criar perfil</div>
         </section>
 
     </div>
