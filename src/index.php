@@ -2,7 +2,7 @@
 
 <main class="home">
     <div class="container">
-        <section class="no-profiles hide">
+        <section class="no-profiles">
             <img src="images/home-estrela.png" alt="Icone de estrela triste" class="img">
         
             <p class="text">
@@ -26,7 +26,7 @@
             </div>
         </section>
 
-        <section class="profiles-shelf">
+        <section class="profiles-shelf hide">
             <div class="container">
                 <div>
                     <p class="text">
@@ -34,7 +34,7 @@
                     </p>
                     <ul class="profiles">
                         <li class="profile">
-                            <input type="radio" name="profile" id="1">
+                            <input type="radio" name="profile" id="1" value="João Victor Sena">
                             <label for="1">
                                 <span class="profile-id">1</span>
                                 <p class="text name">
@@ -50,7 +50,7 @@
             </div>
         </section>
 
-        <section class="create-profile">
+        <section class="create-profile hide">
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" class="back-button" viewBox="0 0 16 16">
                     <defs>

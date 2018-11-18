@@ -20,4 +20,160 @@ section.panel {
     }
 }
 
-// section.result {}
+section.result {
+    padding-top: 50px;
+
+    .slick-slide {
+        height: initial;
+    }
+
+    .slick-dots {
+        display: flex;
+        justify-content: center;
+        font-size: 0;
+        list-style: none;
+        margin: -10px auto 10px;
+        padding: 0;
+
+        li {
+            width: 14px;
+            height: 14px;
+            background-color: #84a2e8;
+            opacity: .35;
+            border-radius: 100%;
+            margin: 5px;
+            transition: opacity .6s ease;
+
+            &.slick-active {
+                opacity: 1;
+            }
+        }
+        
+        button {
+            font-size: 0 !important;
+        }
+    }
+
+    .slide {
+        .first {
+            .container   {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                color: #4b4b4b;
+
+                img {
+                    margin-bottom: 50px;
+                }
+
+                p.text {
+                    font-size: 20px;
+                    font-weight: normal;
+                    margin: 0;
+
+                    &.bold {
+                        font-weight: bold;
+                    }
+                }
+
+                p.letter {
+                    font-size: 80px;
+                    font-weight: 900;
+                    margin: 0;
+                } 
+            }
+        }
+
+        .second {
+            .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                .text {
+                    font-size: 20px;
+                    font-weight: normal;
+                    line-height: 1.25;
+                    text-align: center;
+                }
+
+                .word-list {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    padding: 0;
+
+                    .list-item {
+                        list-style: none;
+                        width: 45%;
+                        text-align: center;
+                        font-size: 14px;
+                        font-weight: 900;
+                        color: #84a2e8;
+                        border-radius: 5px;
+                        border: 1px solid #84a2e8;
+                        padding: 10px 0;
+                        margin: 10px 0;
+                    }
+                }
+            }
+        }
+
+        .thrid {
+            .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                .text {
+                    font-size: 20px;
+                    font-weight: normal;
+                    line-height: 1.25;
+                    text-align: center;
+                    margin-bottom: 0;
+                }
+
+                .object-list {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    padding: 0;
+
+                    .object {
+                        list-style: none;
+                        width: 45%;
+                        text-align: center;
+                        font-size: 14px;
+                        font-weight: 900;
+                        color: #84a2e8;
+                        border-radius: 5px;
+                        border: 1px solid #84a2e8;
+                        padding: 0;
+                        margin: 10px 0;
+
+                        .image {
+                            img {
+                                max-width: 45px;
+                                margin: 0 auto;
+                            }
+                        }
+
+                        .obj-name {
+                            margin-top: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .button {
+        &.finish {
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+}
