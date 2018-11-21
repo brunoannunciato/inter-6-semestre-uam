@@ -1,62 +1,62 @@
 <?php include('header.php'); ?>
 
 <main class="game">
-    <section class="panel" style="display: none;">
+    <section class="panel">
         <div class="container">
             <p class="text">
                 Pinte os quadrados para formar a letra do painel.
             </p>
 
             <div class="board">
-                <div class="led" id="1"></div>
-                <div class="led" id="2"></div>
-                <div class="led" id="3"></div>
-                <div class="led" id="4"></div>
-                <div class="led" id="5"></div>
-                <div class="led" id="6"></div>
-                <div class="led" id="7"></div>
-                <div class="led" id="8"></div>
-                <div class="led" id="9"></div>
-                <div class="led" id="10"></div>
-                <div class="led" id="11"></div>
-                <div class="led" id="12"></div>
-                <div class="led" id="13"></div>
-                <div class="led" id="14"></div>
-                <div class="led" id="15"></div>
-                <div class="led" id="16"></div>
-                <div class="led" id="17"></div>
-                <div class="led" id="18"></div>
-                <div class="led" id="19"></div>
-                <div class="led" id="20"></div>
-                <div class="led" id="21"></div>
-                <div class="led" id="22"></div>
-                <div class="led" id="23"></div>
-                <div class="led" id="24"></div>
-                <div class="led" id="25"></div>
-                <div class="led" id="26"></div>
-                <div class="led" id="27"></div>
-                <div class="led" id="28"></div>
-                <div class="led" id="29"></div>
-                <div class="led" id="30"></div>
-                <div class="led" id="31"></div>
-                <div class="led" id="32"></div>
-                <div class="led" id="33"></div>
-                <div class="led" id="34"></div>
-                <div class="led" id="35"></div>
-                <div class="led" id="36"></div>
-                <div class="led" id="37"></div>
-                <div class="led" id="38"></div>
-                <div class="led" id="39"></div>
-                <div class="led" id="40"></div>
-                <div class="led" id="41"></div>
-                <div class="led" id="42"></div>
-                <div class="led" id="43"></div>
-                <div class="led" id="44"></div>
-                <div class="led" id="45"></div>
-                <div class="led" id="46"></div>
-                <div class="led" id="47"></div>
-                <div class="led" id="48"></div>
-                <div class="led" id="49"></div>
+                <div class="led" data-color="0" id="1"></div>
+                <div class="led" data-color="0" id="2"></div>
+                <div class="led" data-color="0" id="3"></div>
+                <div class="led" data-color="0" id="4"></div>
+                <div class="led" data-color="0" id="5"></div>
+                <div class="led" data-color="0" id="6"></div>
+                <div class="led" data-color="0" id="7"></div>
+                <div class="led" data-color="0" id="8"></div>
+                <div class="led" data-color="0" id="9"></div>
+                <div class="led" data-color="0" id="10"></div>
+                <div class="led" data-color="0" id="11"></div>
+                <div class="led" data-color="0" id="12"></div>
+                <div class="led" data-color="0" id="13"></div>
+                <div class="led" data-color="0" id="14"></div>
+                <div class="led" data-color="0" id="15"></div>
+                <div class="led" data-color="0" id="16"></div>
+                <div class="led" data-color="0" id="17"></div>
+                <div class="led" data-color="0" id="18"></div>
+                <div class="led" data-color="0" id="19"></div>
+                <div class="led" data-color="0" id="20"></div>
+                <div class="led" data-color="0" id="21"></div>
+                <div class="led" data-color="0" id="22"></div>
+                <div class="led" data-color="0" id="23"></div>
+                <div class="led" data-color="0" id="24"></div>
+                <div class="led" data-color="0" id="25"></div>
+                <div class="led" data-color="0" id="26"></div>
+                <div class="led" data-color="0" id="27"></div>
+                <div class="led" data-color="0" id="28"></div>
+                <div class="led" data-color="0" id="29"></div>
+                <div class="led" data-color="0" id="30"></div>
+                <div class="led" data-color="0" id="31"></div>
+                <div class="led" data-color="0" id="32"></div>
+                <div class="led" data-color="0" id="33"></div>
+                <div class="led" data-color="0" id="34"></div>
+                <div class="led" data-color="0" id="35"></div>
+                <div class="led" data-color="0" id="36"></div>
+                <div class="led" data-color="0" id="37"></div>
+                <div class="led" data-color="0" id="38"></div>
+                <div class="led" data-color="0" id="39"></div>
+                <div class="led" data-color="0" id="40"></div>
+                <div class="led" data-color="0" id="41"></div>
+                <div class="led" data-color="0" id="42"></div>
+                <div class="led" data-color="0" id="43"></div>
+                <div class="led" data-color="0" id="44"></div>
+                <div class="led" data-color="0" id="45"></div>
+                <div class="led" data-color="0" id="46"></div>
+                <div class="led" data-color="0" id="47"></div>
+                <div class="led" data-color="0" id="48"></div>
+                <div class="led" data-color="0" id="49"></div>
             </div>
 
             <div class="button done">
@@ -65,7 +65,7 @@
         </div>
     </section>
 
-    <section class="result">
+    <section class="result" style="display: none;">
         <div class="slider">
             <div class="slide">
                 <div class="first">

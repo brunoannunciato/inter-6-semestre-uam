@@ -10,4 +10,5 @@ $(document).ready(function() {
     profiles.setup();
     commons.setup();
     game.results();
+    game.leds();
 });
