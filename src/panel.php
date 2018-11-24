@@ -57,6 +57,21 @@
                 <div class="led" data-color="0" id="47"></div>
                 <div class="led" data-color="0" id="48"></div>
                 <div class="led" data-color="0" id="49"></div>
+                <div class="led" data-color="0" id="50"></div>
+                <div class="led" data-color="0" id="51"></div>
+                <div class="led" data-color="0" id="52"></div>
+                <div class="led" data-color="0" id="53"></div>
+                <div class="led" data-color="0" id="54"></div>
+                <div class="led" data-color="0" id="55"></div>
+                <div class="led" data-color="0" id="56"></div>
+                <div class="led" data-color="0" id="57"></div>
+                <div class="led" data-color="0" id="58"></div>
+                <div class="led" data-color="0" id="59"></div>
+                <div class="led" data-color="0" id="60"></div>
+                <div class="led" data-color="0" id="61"></div>
+                <div class="led" data-color="0" id="62"></div>
+                <div class="led" data-color="0" id="63"></div>
+                <div class="led" data-color="0" id="64"></div>
             </div>
 
             <div class="button done">

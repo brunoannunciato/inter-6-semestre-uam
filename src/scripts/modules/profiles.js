@@ -62,5 +62,9 @@ export class Profiles {
 				window.location.replace('./panel.php');
 			})
 		})()
+
+		const startGame = (function() {
+			console.log('teste');
+		})()
 	}
 }
