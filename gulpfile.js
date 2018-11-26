@@ -102,7 +102,9 @@ gulp.task('scripts', () => {
 // Connect and start a local php server using gulp-connect-php
 gulp.task('connect-sync', () => {
 	connect.server({
-		base: './src'
+		base: './src',
+		bin: 'C:/xampp/php/php.exe',
+		ini: 'C:/xampp/php/php.ini',
 	}, () => {
 		browserSync({
 			proxy: '127.0.0.1:8000'
