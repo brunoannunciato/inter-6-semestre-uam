@@ -80,8 +80,8 @@
 		</div>
 	</section>
 
-	<!-- <section class="result" style="display: none;"> -->
-	<section class="result">
+	<section class="result" style="display: none;">
+	<!-- <section class="result"> -->
 		<div class="slider">
 			<div class="slide">
 				<div class="first">
@@ -113,6 +113,7 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="container">
 			<div class="button finish active">Terminar</div>
 		</div>
