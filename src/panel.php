@@ -80,92 +80,35 @@
 		</div>
 	</section>
 
-	<section class="result" style="display: none;">
+	<!-- <section class="result" style="display: none;"> -->
+	<section class="result">
 		<div class="slider">
 			<div class="slide">
 				<div class="first">
 					<div class="container">
 						<img src="./images/result-medal.png" alt="Icone de medalha">
-						<p class="text bold">
-							Parabéns!
-						</p>
-						<p class="text">
-							Você acertou a letra:
-						</p>
-		
-						<p class="letter">
-							A
-						</p>
+						<p class="text bold">Parabéns!</p>
+						<p class="text">Você acertou a letra:</p>		
+						<p class="letter"></p>
 					</div>
 				</div>
 			</div>
+			
 			<div class="slide">
 				<div class="second">
 					<div class="container">
-						<p class="text">
-							Palavras que começam com essa letra:
-						</p>
-						<ul class="word-list">
-							<li class="list-item">
-								Amor
-							</li>
-							<li class="list-item">
-								Amigo
-							</li>
-							<li class="list-item">
-								Artigo
-							</li>
-							<li class="list-item">
-								Astuto
-							</li>
-							<li class="list-item">
-								Alimento
-							</li>
-							<li class="list-item">
-								Amargo
-							</li>
-							<li class="list-item">
-								Atrair
-							</li>
-							<li class="list-item">
-								Augusto
-							</li>
-						</ul>
+						<p class="text">Palavras que começam com essa letra:</p>
+
+						<ul class="word-list"></ul>
 					</div>
 				</div>
 			</div>
+
 			<div class="slide">
 				<div class="thrid">
 					<div class="container">
-						<p class="text">
-							Objetos que começam com essa letra:
-						</p>
-						<ul class="object-list">
-							<li class="object">
-								<figure class="image">
-									<img src="https://assets.nike.com.br/ArquivoExibir/1233946.jpg" alt="">
-								</figure>
-								<p class="obj-name">Bola</p>
-							</li>
-							<li class="object">
-								<figure class="image">
-									<img src="https://assets.nike.com.br/ArquivoExibir/1233946.jpg" alt="">
-								</figure>
-								<p class="obj-name">Bola</p>
-							</li>
-							<li class="object">
-								<figure class="image">
-									<img src="https://assets.nike.com.br/ArquivoExibir/1233946.jpg" alt="">
-								</figure>
-								<p class="obj-name">Bola</p>
-							</li>
-							<li class="object">
-								<figure class="image">
-									<img src="https://assets.nike.com.br/ArquivoExibir/1233946.jpg" alt="">
-								</figure>
-								<p class="obj-name">Bola</p>
-							</li>
-						</ul>
+						<p class="text">Objetos que começam com essa letra:</p>
+						<ul class="object-list"></ul>
 					</div>
 				</div>
 			</div>
