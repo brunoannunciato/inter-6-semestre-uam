@@ -2,7 +2,7 @@
     <head>
         <?php  include('includes.php')?>
     </head>
-    <body>
+    <body class="<?php echo(($_SERVER['REQUEST_URI'] == '/panel.php' ? 'panel' : 'home'))?>">
         <header>
             <div class="container">
                 <img src="images/arrow-left.png" alt="" class="back-button">

@@ -1,3 +1,11 @@
+body {
+    &.panel {
+        .add-profile {
+            opacity: 0;
+        }
+    }
+}
+
 header {
     background: linear-gradient(256deg, #98b1ec, #81a5f5);
     border-bottom-left-radius: 50%;

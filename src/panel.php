@@ -1,5 +1,4 @@
 <?php include('header.php'); ?>
-
 <main class="game">
 	<section class="panel">
 		<div class="container">
