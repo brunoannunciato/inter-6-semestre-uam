@@ -80,7 +80,14 @@ export class Game {
 					led.addClass('checked');
 					clickedTotal++;
 
-					clickedTotal === sortedTotal ? $('.button.done').removeClass('disable').addClass('active') : console.log(`${clickedTotal} is smaller than ${sortedTotal}`);
+					if (clickedTotal === sortedTotal) {
+						$('.button.done').removeClass('disable').addClass('active');
+						$(leds).each((i, obj) => {
+							obj.addClass('disable');
+						})
+					} else {
+						console.log(`${clickedTotal} is smaller than ${sortedTotal}`);
+					}
 				} else {
 					console.log(`${itemColor} is not equal ${sortedObj.values[itemId]}`);
 				}
