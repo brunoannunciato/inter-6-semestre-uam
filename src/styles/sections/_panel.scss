@@ -52,6 +52,8 @@ section.result {
 			&.slick-active {
 				opacity: 1;
 			}
+
+			button { opacity: 0; }
 		}
 		
 		button {

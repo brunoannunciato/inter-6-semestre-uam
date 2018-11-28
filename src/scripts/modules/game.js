@@ -2,10 +2,13 @@ import infos from './letters';
 
 export class Game {
 	results() {
-		$('.result .slider').slick({
-			arrows: false,
-			dots: true
-		});
+		$('.done.active').click(function() { alert(0) })
+
+		// $('.done.active').click(function() {
+		// 	console.log('teste');
+		// 	$('section.panel').addClass('hide');
+		// 	$('section.result').removeClass('hide');
+		// });
 	}
 
 	leds() {
@@ -40,7 +43,7 @@ export class Game {
 		console.log('sortedTotal', sortedTotal, sortedObj);
 
 		for (let led of leds) {
-			led.text(led.attr('id'))
+			// led.text(led.attr('id'))
 			
 			let color = 0;
 			
@@ -85,6 +88,15 @@ export class Game {
 						$(leds).each((i, obj) => {
 							obj.addClass('disable');
 						})
+						$('.done.active').click(() => { 
+							$('section.panel').addClass('hide');
+							$('section.result').removeClass('hide');
+
+							$('.result .slider').slick({
+								arrows: false,
+								dots: true
+							});
+						 })
 					} else {
 						console.log(`${clickedTotal} is smaller than ${sortedTotal}`);
 					}
