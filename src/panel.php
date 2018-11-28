@@ -79,7 +79,7 @@
 		</div>
 	</section>
 
-	<section class="result" style="display: none;">
+	<section class="result hide">
 	<!-- <section class="result"> -->
 		<div class="slider">
 			<div class="slide">
@@ -114,7 +114,7 @@
 		</div>
 
 		<div class="container">
-			<div class="button finish active">Terminar</div>
+			<a href="/panel.php" class="button finish active">Reiniciar</a>
 		</div>
 	</section>
 </main>
