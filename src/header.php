@@ -7,7 +7,9 @@
             <div class="container">
                 <img src="images/arrow-left.png" alt="" class="back-button">
 
-                <h1 class="title">LOGO</h1>
+                <figure class="logo">
+                    <img src="/images/logo-mono.png" alt="Illumind">
+                </figure>
 
                 <div class="add-profile">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25">
