@@ -13,11 +13,28 @@ export class Game {
 		const infoIndex = Math.floor(Math.random() * Math.floor(3));
 		const sortedObj = infos[infoIndex];
 		let sortedTotal = 0, clickedTotal = 0;
+
+		/** Append what letter is sorted */
+		$('.letter').text(sortedObj.letter);
+
+		/** Append each word to the list of words */
+		sortedObj.words.forEach(element => $('.word-list').append(`<li class="list-item">${element}</li>`));
+
+		/** Append each object name and figure to the list of figures */
+		for (let item in sortedObj.objects) {
+			$('.object-list').append(`
+				<li class="object">
+					<figure class="image">
+						<img src="${sortedObj.objects[item]}" alt="${item}">
+					</figure>
+					<p class="obj-name">${item}</p>
+				</li>
+			`);
+		}
 		
+		/** Count how many positions have a number different from 0 */
 		for (let value in sortedObj.values) {
-			if (sortedObj.values[value] > 0) {
-				sortedTotal++;
-			}
+			if (sortedObj.values[value] > 0) sortedTotal++;
 		}
 		
 		console.log('sortedTotal', sortedTotal, sortedObj);
