@@ -1,0 +1,145 @@
+section.config {
+    .row {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
+    .col-50 {
+        display: flex;
+        width: 50%;
+    }
+    
+    .j-end { justify-content: flex-end; }
+
+    .content {height: 60%;}
+
+    .colors {
+        display: flex;
+    }
+
+    label {
+        display: block;
+        position: relative;
+        padding-left: 6px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        width: 25px;
+        height: 25px;
+    }
+    
+    /* Hide the browser's default checkbox */
+    label input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 25px;
+        width: 100%;
+        left: 0;
+        top: 0;
+    }
+    
+    /* Create a custom checkbox */
+    .checked {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: #eee;
+        border-radius: 5px;
+    }
+    
+    /* On mouse-over, add a grey background color */
+    label:hover input ~ .checked {
+        background-color: #ccc;
+    }
+    
+    /* When the checkbox is checked, add a blue background */
+    label input:checked ~ .checked {
+        background-color: #2196F3;
+    }
+    
+    /* Create the checked/indicator (hidden when not checked) */
+    .checked:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+    
+    /* Show the checked when checked */
+    label input:checked ~ .checked:after {
+        display: block;
+    }
+    
+    /* Style the checked/indicator */
+    label .checked:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    .green {
+        .checked {
+            background-color: #43ff75 !important;
+        }
+    }
+
+    .red {
+        .checked {
+            background-color: #ff4343 !important;
+        }
+    }
+
+    .blue {
+        .checked {
+            background-color: #4388ff !important;
+        }
+    }
+
+    .yellow {
+        .checked {
+            background-color: #ffe043 !important;
+        }
+    }
+
+    .white {
+        .checked {
+            background-color: #fff !important;
+            border: 1px solid #000;
+            width: 24px;
+            height: 24px;
+
+            &:after {
+                background: #000;
+                border: solid #000;
+                width: 10px;
+                height: 10px;
+                border-radius: 100%;
+                left: 4px;
+            }
+        }
+    }
+
+    .economic {
+        width: 25px;
+        height: 25px;
+        background: #fff;
+    }
+
+    .button {
+        text-align: center;
+    }
+
+}

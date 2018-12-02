@@ -16,6 +16,11 @@ export class Game {
 		const infoIndex = Math.floor(Math.random() * Math.floor(infos.length));
 		const sortedObj = infos[infoIndex];
 		let sortedTotal = 0, clickedTotal = 0;
+		console.log()
+
+		if (window.location.pathname.includes('panel')) {
+			fetch('http://192.168.43.45/MATRIZ=' + sortedObj.letter.toUpperCase(), {mode: 'no-cors', method: 'GET'});
+		}
 
 		/** Append what letter is sorted */
 		$('.letter').text(sortedObj.letter);
@@ -52,7 +57,7 @@ export class Game {
 
 				color++;
 				
-				if (color > 3) {
+				if (color > 1) {
 					color = 0;
 				}
 				
@@ -60,19 +65,7 @@ export class Game {
 				
 				switch (color) {
 					case 1:
-						this.style.background = '#ff4343';
-					break;
-					
-					case 2:
-						this.style.background = '#4388ff';
-					break;
-					
-					case 3:
-						this.style.background = '#43ff75';
-					break;
-					
-					default:
-						this.style.background = 'none';
+						this.style.background = localStorage.getItem('wrongColor');
 					break;
 				}
 				
@@ -80,7 +73,8 @@ export class Game {
 				let itemId = Number(self.attr('id'));
 
 				if (itemColor === sortedObj.values[itemId] && sortedObj.values[itemId] !== 0) {
-					led.addClass('checked');
+					led.addClass('right');
+					led.css('background-color', localStorage.getItem('rightColor'))
 					clickedTotal++;
 
 					if (clickedTotal === sortedTotal) {
