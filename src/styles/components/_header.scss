@@ -1,9 +1,17 @@
 body {
     &.panel {
         .add-profile {
-            opacity: 0;
-            pointer-events: none;
+            display: none;
         }
+
+        .config-btn {
+            display: block !important;
+            margin-top: -8%;
+        }
+    }
+
+    .config-btn {
+        display: none;
     }
 }
 

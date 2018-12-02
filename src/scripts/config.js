@@ -18,7 +18,7 @@ $('.button.save').click(() => {
     localStorage.setItem('rightColor', setRightColor());
     localStorage.setItem('wrongColor', setWrongColor());
     localStorage.setItem('economicMode', isEconomicMode());
-    window.location = '/';
+    window.location = '/panel.php';
 })
 
 console.log(isEconomicMode());

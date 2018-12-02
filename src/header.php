@@ -11,6 +11,10 @@
                     <img src="/images/logo-mono.png" alt="Illumind">
                 </figure>
 
+                <a href="/config.php" class="config-btn">
+                    <img src="images/icons/i_config.png" alt="" class="config">
+                </a>
+
                 <div class="add-profile">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25">
                         <defs>
