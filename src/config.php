@@ -1,6 +1,6 @@
 <?php include('header.php'); ?>
 
-<main class="home">
+<main class="config">
 	<section class="config">
 		<div class="container">
 			<h2 class="title">

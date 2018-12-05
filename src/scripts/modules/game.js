@@ -1,6 +1,16 @@
 import infos from './letters';
 
+if(localStorage.getItem('economicMode') == "false") {
+	$('.economic-mode').addClass('hide');
+	console.log('teste');
+}
+
+$('.trigger').click(() => {
+	$('.economic-mode').toggleClass('active');
+});
+
 export class Game {
+
 	results() {
 		$('.done.active').click(function() { alert(0) })
 
@@ -101,5 +111,10 @@ export class Game {
 				}
 			});
 		}
+
+		let panelSimulator = $('.panel-simulator'),
+			url = `./images/economic-mode/letra-${sortedObj.letter}.png`;
+
+		panelSimulator.attr('src', url);
 	}
 }

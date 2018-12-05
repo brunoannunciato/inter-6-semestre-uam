@@ -1,4 +1,9 @@
 section.panel {
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 50px;
+	min-height: calc(100vh - 154px);
+
 	.text { text-align: center; }
 
 	.board {
@@ -22,6 +27,49 @@ section.panel {
 		text-align: center;
 		margin: 15px auto;
 		width: 80%;
+	}
+
+	.economic-mode {
+		background-color: #fff;
+		border-top: 1px solid #4b4b4b;
+		position: absolute;
+		width: 100%;
+		height: 300px;
+		bottom: -300px;
+		transition: all .6s ease;
+		
+		&.active {
+			bottom: 0;
+
+			svg { transform: rotate(0deg) !important; }
+		}
+
+		.trigger {
+			border-bottom: 29px solid #81a5f5;
+			border-left: 30px solid transparent;
+			border-right: 30px solid transparent;
+			height: 0;
+			width: 50px;
+			position: absolute;
+			left: calc(50% - 60px);
+			top: -29px;
+			cursor: pointer;
+
+			svg {
+				display: inline;
+				width: 30px;
+				height: auto;
+				left: calc(50% - 15px);
+				transform: rotate(180deg);
+				position: absolute;
+				transition: all .6s ease;
+			}
+		}
+
+		.panel-simulator {
+			display: block;
+			margin: 0 auto;
+		}
 	}
 }
 

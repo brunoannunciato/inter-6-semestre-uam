@@ -19,7 +19,9 @@ export class Commons {
 					backButton.click(() => {
 						window.location.replace('./');
 					});
-				} else { console.log('testeeeee'); }
+				} else if ($('main').hasClass('config')){
+					window.location.replace('/panel.php');
+				}
 			});
 		})();
 	}
